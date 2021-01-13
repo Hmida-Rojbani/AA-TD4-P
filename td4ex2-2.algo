@@ -1,0 +1,20 @@
+FUNCTION desq_noeud(A : AVL) : AVL
+VAR 
+    tmpG, tmpD : AVL
+BEGIN
+    IF (A = NIL) THEN
+        RETURN NIL
+    ELSE
+        IF (abs(A^.bal) > 1) THEN
+            RETURN A
+        ELSE
+            tmpG := desq_noeud(A^.fg)
+            tmpD := desq_noeud(A^.fd)
+            IF (tmpG = NIL) THEN
+                RETURN tmpD
+            ELSE
+                RETURN tmpG
+            END_IF
+        END_IF
+    END_IF
+END
