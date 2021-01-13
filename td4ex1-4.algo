@@ -1,0 +1,14 @@
+FUNCTION est_AVL(A : AB) : BOOLEAN
+
+BEGIN
+    IF (Tester_ABR(A) = FALSE) THEN
+        RETURN FALSE 
+    END_IF
+    IF (A = NIL) THEN
+        RETURN TRUE
+    ELSE_IF (abs(hauteur(A^.fg) - hauteur(A^.fd)) <= 1) THEN  // abs() return absult value
+        RETURN est_AVL(A^.fg) AND est_AVL(A^.fd)
+    ELSE
+        RETURN FALSE
+    END_IF
+END
