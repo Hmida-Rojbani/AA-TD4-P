@@ -1,0 +1,8 @@
+PROCEDURE Calcul_Balance(A :AVL)
+BEGIN
+    IF (A <> NIL) THEN
+        A^.bal = hauteur(A^.fg) - hauteur(A^.fd)
+        Calcul_Balance(A^.fg)
+        Calcul_Balance(A^.fd)
+    END_IF
+END
