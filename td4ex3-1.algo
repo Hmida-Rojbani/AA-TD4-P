@@ -1,0 +1,14 @@
+PROCEDURE createAVL(VAR A: AVL, T : STRING, d : INTEGER, f :INTEGER)
+VAR
+    mid : INTEGER
+BEGIN
+    IF (d <= f) THEN
+        mid := (d + f) DIV 2
+        A := creer_noeud()
+        A^.val := T[mid]
+        A^.fg  := NIL
+        A^.fd  := NIL
+        createAVL(A^.fg, T, d , mid -1)
+        createAVL(A^.fd, T, mid +1 , f)
+    END_IF
+END
