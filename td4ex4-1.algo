@@ -1,0 +1,16 @@
+FUNCTION EQUILIBRÉ((A :AVL) : BOOLEAN
+
+BEGIN
+    IF (A = NIL) THEN
+        RETURN TRUE
+    ELSE_IF (abs(A^.fg^.haut -A^.fd^.haut) > 1 ) THEN
+        RETURN FALSE
+    ELSE
+        IF ( EQUILIBRÉ(A^.fg) = FALSE) THEN
+            RETURN FALSE
+        ELSE
+            RETURN EQUILIBRÉ(A^.fd)
+        END_IF
+
+    END_IF
+END
