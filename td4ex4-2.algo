@@ -1,0 +1,11 @@
+PROCEDURE fusionAVL(VAR C : AVL, A:AVL, B:AVL, x : INTEGER)
+BEGIN
+    C := creer_noeud()
+    C^.val := x
+    C^.fg := A
+    C^.fd := B
+    IF (abs (hauteur(A) - hauteur(B)) > 1) THEN
+        reequilbrage(C)
+    END_IF
+    C^.haut := hauteur(C)
+END
